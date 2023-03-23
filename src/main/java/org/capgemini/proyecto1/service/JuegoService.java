@@ -10,5 +10,11 @@ public interface JuegoService {
 	
 	// Para Update & Add
 	public void saveJuego(Juego juego);
+	
+	/**
+	 * 
+	 * @param id
+	 */
+	public void deleteById(int id);
 
 }
