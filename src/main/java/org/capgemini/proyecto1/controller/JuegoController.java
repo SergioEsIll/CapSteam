@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class JuegoController {
@@ -34,8 +35,19 @@ public class JuegoController {
 
 	// Guardar Juego
 	@PostMapping("/save")
-	public String saveUser(Juego juego) {
+	public String saveJuego(Juego juego) {
 		juegoService.saveJuego(juego);
+		return ("redirect:/");
+	}
+
+	@GetMapping("/delete")
+	public String deleteJuego(@RequestParam("id") int id) {
+		try {
+			juegoService.deleteById(id);
+		} catch (Exception e) {
+			System.out.print("El juego no existe");
+		}
+
 		return ("redirect:/");
 	}
 
