@@ -46,7 +46,9 @@
 													<td th:text="${juego.genre}" />
 													<td th:text="${juego.publisher}" />
 													<td th:text="${juego.global_sales}" />
-													<td><a th:href="@{/delete(id=${juego.id})}"
+													<td><a th:href="@{/edit(id=${juego.id})}"
+														class="btn btn-success">Editar</a> | <a
+														th:href="@{/delete(id=${juego.id})}"
 														class="btn btn-danger">Eliminar</a></td>
 												</tr>
 											</tbody>

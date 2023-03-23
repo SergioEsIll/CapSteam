@@ -39,7 +39,21 @@ public class JuegoController {
 		juegoService.saveJuego(juego);
 		return ("redirect:/");
 	}
+	
+	// Editar Juego
+	@GetMapping("/edit")
+	public String editJuego(@RequestParam("id") int id, Model m) {
+		try {
+			m.addAttribute("juego", juegoService.findById(id));
+			return "formularioJuego";
+		} catch (Exception e) {
+			System.out.print("El juego no existe");
+			return ("redirect:/");
+		}
+		
+	}
 
+	// Borrar Juego
 	@GetMapping("/delete")
 	public String deleteJuego(@RequestParam("id") int id) {
 		try {
