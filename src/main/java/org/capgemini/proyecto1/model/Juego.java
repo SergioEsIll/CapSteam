@@ -15,7 +15,7 @@ public class Juego {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
-	private int rank;
+	private int ranking;
 	private String name;
 	private String platform;
 	private int year;
@@ -31,10 +31,10 @@ public class Juego {
 		super();
 	}
 
-	public Juego(int rank, String name, String platform, int year, String genre, String publisher, double na_sales,
+	public Juego(int ranking, String name, String platform, int year, String genre, String publisher, double na_sales,
 			double eu_sales, double jp_sales, double other_sales, double global_sales) {
 		super();
-		this.rank = rank;
+		this.ranking = ranking;
 		this.name = name;
 		this.platform = platform;
 		this.year = year;
@@ -47,11 +47,11 @@ public class Juego {
 		this.global_sales = global_sales;
 	}
 
-	public Juego(int id, int rank, String name, String platform, int year, String genre, String publisher,
+	public Juego(int id, int ranking, String name, String platform, int year, String genre, String publisher,
 			double na_sales, double eu_sales, double lp_sales, double other_sales, double global_sales) {
 		super();
 		this.id = id;
-		this.rank = rank;
+		this.ranking = ranking;
 		this.name = name;
 		this.platform = platform;
 		this.year = year;
@@ -64,12 +64,12 @@ public class Juego {
 		this.global_sales = global_sales;
 	}
 
-	public int getRank() {
-		return rank;
+	public int getRanking() {
+		return ranking;
 	}
 
-	public void setRank(int rank) {
-		this.rank = rank;
+	public void setRanking(int ranking) {
+		this.ranking = ranking;
 	}
 
 	public String getPlatform() {
@@ -162,7 +162,7 @@ public class Juego {
 
 	@Override
 	public String toString() {
-		return "Juego [id=" + id + ", rank=" + rank + ", name=" + name + ", platform=" + platform + ", year=" + year
+		return "Juego [id=" + id + ", ranking=" + ranking + ", name=" + name + ", platform=" + platform + ", year=" + year
 				+ ", genre=" + genre + ", publisher=" + publisher + ", na_sales=" + na_sales + ", eu_sales=" + eu_sales
 				+ ", jp_sales=" + jp_sales + ", other_sales=" + other_sales + ", global_sales=" + global_sales + "]";
 	}

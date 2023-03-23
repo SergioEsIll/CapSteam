@@ -1,6 +1,7 @@
 package org.capgemini.proyecto1.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.capgemini.proyecto1.model.Juego;
 import org.capgemini.proyecto1.repository.JuegoDao;
@@ -29,6 +30,11 @@ public class JuegoServiceImpl implements JuegoService {
 	@Override
 	public void deleteById(int id) {
 		juegoDao.deleteById(id);
+	}
+
+	@Override
+	public Optional<Juego> findById(int id) {
+		return juegoDao.findById(id);
 	}
 
 }
