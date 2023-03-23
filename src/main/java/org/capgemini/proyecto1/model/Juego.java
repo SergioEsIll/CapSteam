@@ -23,7 +23,7 @@ public class Juego {
 	private String publisher;
 	private double na_sales;
 	private double eu_sales;
-	private double lp_sales;
+	private double jp_sales;
 	private double other_sales;
 	private double global_sales;
 
@@ -43,7 +43,7 @@ public class Juego {
 		this.publisher = publisher;
 		this.na_sales = na_sales;
 		this.eu_sales = eu_sales;
-		this.lp_sales = lp_sales;
+		this.jp_sales = lp_sales;
 		this.other_sales = other_sales;
 		this.global_sales = global_sales;
 	}
@@ -120,12 +120,12 @@ public class Juego {
 		this.eu_sales = eu_sales;
 	}
 
-	public double getLp_sales() {
-		return lp_sales;
+	public double getJp_sales() {
+		return jp_sales;
 	}
 
-	public void setLp_sales(double lp_sales) {
-		this.lp_sales = lp_sales;
+	public void setJp_sales(double lp_sales) {
+		this.jp_sales = lp_sales;
 	}
 
 	public double getOther_sales() {
@@ -148,7 +148,7 @@ public class Juego {
 	public String toString() {
 		return "Juego [id=" + id + ", rank=" + rank + ", name=" + name + ", platform=" + platform + ", year=" + year
 				+ ", genre=" + genre + ", publisher=" + publisher + ", na_sales=" + na_sales + ", eu_sales=" + eu_sales
-				+ ", lp_sales=" + lp_sales + ", other_sales=" + other_sales + ", global_sales=" + global_sales + "]";
+				+ ", jp_sales=" + jp_sales + ", other_sales=" + other_sales + ", global_sales=" + global_sales + "]";
 	}
 
 }
