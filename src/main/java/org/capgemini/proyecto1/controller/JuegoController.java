@@ -12,6 +12,11 @@ public class JuegoController {
 	@Autowired
 	JuegoService juegoService;
 	
+	/**
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/")
 	public String listJuego(Model model) {
 		model.addAttribute("listadoJuego", juegoService.findAll());
