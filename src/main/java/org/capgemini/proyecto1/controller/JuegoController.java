@@ -6,13 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class JuegoController {
-	
+
 	@Autowired
 	JuegoService juegoService;
-	
+
 	/**
 	 * 
 	 * @param model
@@ -23,12 +24,19 @@ public class JuegoController {
 		model.addAttribute("listadoJuego", juegoService.findAll());
 		return "listadoJuego.html";
 	}
-	
-	//Nuevo Juego
+
+	// Nuevo Juego
 	@GetMapping("/new")
 	public String newJuego(Juego juego, Model m) {
-		m.addAttribute("juego",juego);
+		m.addAttribute("juego", juego);
 		return "formularioJuego";
+	}
+
+	// Guardar Juego
+	@PostMapping("/save")
+	public String saveUser(Juego juego) {
+		juegoService.saveJuego(juego);
+		return ("redirect:/");
 	}
 
 }
