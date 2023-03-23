@@ -43,6 +43,11 @@ public class JuegoController {
 		message = "Please upload a csv file!";
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseMessage(message));
 	}
+	
+	@GetMapping("/index")
+	public String addCsv() {
+		return "index.html";
+	}
 
 	/**
 	 * 
