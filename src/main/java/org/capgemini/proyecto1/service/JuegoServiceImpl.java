@@ -21,4 +21,9 @@ public class JuegoServiceImpl implements JuegoService {
 		return juegoDao.findAll();
 	}
 
+	@Override
+	public void saveJuego(Juego juego) {
+		juegoDao.save(juego);
+	}
+
 }
