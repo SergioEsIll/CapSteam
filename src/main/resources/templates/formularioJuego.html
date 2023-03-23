@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+<link rel="stylesheet" th:href="@{/css/custom.css}" />
+<title>Formulario de juegos</title>
+</head>
+<body>
+	<div class="container">
+		<h1 align="center">CapgeSteam</h1>
+		<div align="center">
+		
+			<h2>FORMULARIO DE JUEGOS (Añadir / Editar)</h2>
+
+			<form method="post" th:object="${juego}" th:action="@{/save}">
+				<input id="id" th:field="*{id}" type="hidden" />
+				<table>
+					<tr>
+						<td><label for="name">Nombre:</label></td>
+						<td><input type="text" th:field="{name}" /></td>
+					</tr>
+					<tr>
+						<td><label for="rank">Ranking:</label></td>
+						<td><input type="text" th:field="{rank}" /></td>
+					</tr>
+					<tr>
+						<td><label for="platform">Plataforma:</label></td>
+						<td><input type="text" th:field="{platform}" /></td>
+					</tr>
+					<tr>
+						<td><label for="year">Año:</label></td>
+						<td><input type="text" th:field="*{year}" /></td>
+					</tr>
+					<tr>
+						<td><label for="genre">Género:</label></td>
+						<td><input type="text" th:field="*{genre}" /></td>
+					</tr>
+					<tr>
+						<td><label for="publisher">Editor:</label></td>
+						<td><input type="text" th:field="*{publisher}" /></td>
+					</tr>
+					<tr>
+						<td><label for="na_sales">Ventas EEUU:</label></td>
+						<td><input type="text" th:field="*{na_sales}" /></td>
+					</tr>
+					<tr>
+						<td><label for="eu_sales">Ventas UE:</label></td>
+						<td><input type="text" th:field="*{eu_sales}" /></td>
+					</tr>
+					<tr>
+						<td><label for="jp_sales">Ventas Japón:</label></td>
+						<td><input type="text" th:field="*{jp_sales}" /></td>
+					</tr>
+					<tr>
+						<td><label for="other_sales">Otras Ventas:</label></td>
+						<td><input type="text" th:field="*{other_sales}" /></td>
+					</tr>
+					<tr>
+						<td><label for="global_sales">Ventas Globales:</label></td>
+						<td><input type="text" th:field="*{global_sales}" /></td>
+					</tr>
+					
+					<tr>
+						<td colspan="2" align="center"><input type="submit"
+							value="Guardar Juego"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
