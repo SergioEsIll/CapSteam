@@ -20,6 +20,10 @@
 									<div class="table-responsive table-scroll"
 										data-mdb-perfect-scrollbar="true"
 										style="position: relative; height: 700px">
+										<div class="d-flex justify-content-center m-3">
+											<h1>Listado de Juegos</h1>
+										</div>
+
 										<table class="table table-striped mb-0">
 											<thead style="background-color: #002d72;">
 												<tr class="text-white">
@@ -30,6 +34,7 @@
 													<th scope="col">Género</th>
 													<th scope="col">Editor</th>
 													<th scope="col">Ventas Globales</th>
+													<th scope="col"></th>
 												</tr>
 											</thead>
 											<tbody>
@@ -41,6 +46,8 @@
 													<td th:text="${juego.genre}" />
 													<td th:text="${juego.publisher}" />
 													<td th:text="${juego.global_sales}" />
+													<td><a th:href="@{/delete(id=${juego.id})}"
+														class="btn btn-danger">Eliminar</a></td>
 												</tr>
 											</tbody>
 										</table>
