@@ -8,16 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="juegos")
+@Table(name = "juegos")
 public class Juego {
-	
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id;
 	private int rank;
 	private String name;
+	private String platform;
 	private int year;
 	private String genre;
 	private String publisher;
@@ -26,19 +26,18 @@ public class Juego {
 	private double lp_sales;
 	private double other_sales;
 	private double global_sales;
-	
+
 	public Juego() {
 		super();
 	}
-	
-	
 
-	public Juego(int id, int rank, String name, int year, String genre, String publisher, double na_sales,
-			double eu_sales, double lp_sales, double other_sales, double global_sales) {
+	public Juego(int id, int rank, String name, String platform, int year, String genre, String publisher,
+			double na_sales, double eu_sales, double lp_sales, double other_sales, double global_sales) {
 		super();
 		this.id = id;
 		this.rank = rank;
 		this.name = name;
+		this.platform = platform;
 		this.year = year;
 		this.genre = genre;
 		this.publisher = publisher;
@@ -49,20 +48,28 @@ public class Juego {
 		this.global_sales = global_sales;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public int getRank() {
 		return rank;
 	}
 
 	public void setRank(int rank) {
 		this.rank = rank;
+	}
+
+	public String getPlatform() {
+		return platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -139,14 +146,9 @@ public class Juego {
 
 	@Override
 	public String toString() {
-		return "Juego [id=" + id + ", rank=" + rank + ", name=" + name + ", year=" + year + ", genre=" + genre
-				+ ", publisher=" + publisher + ", na_sales=" + na_sales + ", eu_sales=" + eu_sales + ", lp_sales="
-				+ lp_sales + ", other_sales=" + other_sales + ", global_sales=" + global_sales + "]";
+		return "Juego [id=" + id + ", rank=" + rank + ", name=" + name + ", platform=" + platform + ", year=" + year
+				+ ", genre=" + genre + ", publisher=" + publisher + ", na_sales=" + na_sales + ", eu_sales=" + eu_sales
+				+ ", lp_sales=" + lp_sales + ", other_sales=" + other_sales + ", global_sales=" + global_sales + "]";
 	}
-	
-	
-	
-	
-	
 
 }
