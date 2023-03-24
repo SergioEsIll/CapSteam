@@ -36,5 +36,10 @@ public class JuegoServiceImpl implements JuegoService {
 	public Optional<Juego> findById(int id) {
 		return juegoDao.findById(id);
 	}
+	
+	@Override
+	public List<Juego> findByPlatform(String platform) {
+		return juegoDao.findByPlatform(platform);
+	}
 
 }
