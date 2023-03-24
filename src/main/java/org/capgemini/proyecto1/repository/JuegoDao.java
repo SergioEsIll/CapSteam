@@ -11,5 +11,6 @@ public interface JuegoDao extends JpaRepository<Juego, Integer>{
 
 	public List<Juego> findByPlatform(String platform);
 
+	public List<Juego> findByGenre(String genre);
 	
 }
