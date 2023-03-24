@@ -17,6 +17,13 @@
 			<a th:href="@{/new}" class="btn btn-primary">Añadir Juego</a> <a
 				th:href="@{/index}" class="btn btn-secondary">Subir Juegos CSV</a>
 		</div>
+		<div class="mb-2 d-flex justify-content-center align-items-center gap-2">
+			<label for="genres">Seleccione un género:</label> <select
+				class="form-select w-25" name="genres" id="genres" size="1">
+				<option th:each="genero, status : ${listadoGenero}"
+					value="${genero}" th:text="${genero}" />
+			</select>
+		</div>
 		<table class="table table-striped table-hover">
 			<thead style="background-color: #002d72;">
 				<tr class="text-white">
