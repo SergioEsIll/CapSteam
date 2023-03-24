@@ -7,66 +7,88 @@
 	rel="stylesheet">
 <link rel="stylesheet" th:href="@{/css/custom.css}" />
 <title>Formulario de juegos</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	integrity="sha384-REg7w3sJBnGvKPZ9XKjAWczdVWtrYcJvL6E/PQ2WrB14rMzZ8giD/tMh9jFpFfmJ"
+	crossorigin="anonymous" />
+<link rel="stylesheet" href="css/formularioJuego.css" />
 </head>
-<body>
-	<div class="container">
-		<h1 align="center">CapgeSteam</h1>
-		<div align="center">
-		
-			<h2>FORMULARIO DE JUEGOS (Añadir / Editar)</h2>
 
+<body>
+	<div class="container my-5 w-50">
+		<div class="card p-5">
+			<h2 class="text-center mb-4 p-2 mx-2">FORMULARIO DE JUEGOS
+				(Añadir / Editar)</h2>
 			<form method="post" th:object="${juego}" th:action="@{/save}">
 				<input id="id" th:field="*{id}" type="hidden" />
-				<table>
-					<tr>
-						<td><label for="ranking">Ranking:</label></td>
-						<td><input type="text" th:field="*{ranking}" /></td>
-					</tr>
-					<tr>
-						<td><label for="name">Nombre:</label></td>
-						<td><input type="text" th:field="*{name}" /></td>
-					</tr>
-					<tr>
-						<td><label for="platform">Plataforma:</label></td>
-						<td><input type="text" th:field="*{platform}" /></td>
-					</tr>
-					<tr>
-						<td><label for="year">Año:</label></td>
-						<td><input type="text" th:field="*{year}" /></td>
-					</tr>
-					<tr>
-						<td><label for="genre">Género:</label></td>
-						<td><input type="text" th:field="*{genre}" /></td>
-					</tr>
-					<tr>
-						<td><label for="publisher">Editor:</label></td>
-						<td><input type="text" th:field="*{publisher}" /></td>
-					</tr>
-					<tr>
-						<td><label for="na_sales">Ventas EEUU:</label></td>
-						<td><input type="text" th:field="*{na_sales}" /></td>
-					</tr>
-					<tr>
-						<td><label for="eu_sales">Ventas UE:</label></td>
-						<td><input type="text" th:field="*{eu_sales}" /></td>
-					</tr>
-					<tr>
-						<td><label for="jp_sales">Ventas Japón:</label></td>
-						<td><input type="text" th:field="*{jp_sales}" /></td>
-					</tr>
-					<tr>
-						<td><label for="other_sales">Otras Ventas:</label></td>
-						<td><input type="text" th:field="*{other_sales}" /></td>
-					</tr>
-					<tr>
-						<td><label for="global_sales">Ventas Globales:</label></td>
-						<td><input type="text" th:field="*{global_sales}" /></td>
-					</tr>
-					<tr>
-						<td colspan="2" align="center"><input type="submit"
-							value="Guardar Juego"></td>
-					</tr>
-				</table>
+
+				<div
+					class="mb-3 d-md-flex justify-content-center align-items-center gap-2">
+					<label for="ranking" class="form-label col-md-3 col-sm-12">Ranking</label>
+					<input class="form-control" type="text" th:field="*{ranking}" />
+				</div>
+				<div
+					class="mb-3 d-md-flex justify-content-center align-items-center gap-2">
+					<label for="name" class="form-label col-md-3 col-sm-12">Nombre</label>
+					<input type="text" th:field="*{name}" class="form-control" />
+				</div>
+				<div
+					class="mb-3 d-md-flex justify-content-center align-items-center gap-2">
+					<label for="platform" class="form-label col-md-3 col-sm-12">Plataforma</label>
+					<input type="text" th:field="*{platform}" class="form-control" />
+				</div>
+				<div
+					class="mb-3 d-md-flex justify-content-center align-items-center gap-2">
+					<label for="year" class="form-label col-md-3 col-sm-12">Año</label>
+					<input type="text" th:field="*{year}" class="form-control" />
+				</div>
+				<div
+					class="mb-3 d-md-flex justify-content-center align-items-center gap-2">
+					<label for="genre" class="form-label col-md-3 col-sm-12">Género</label>
+					<input type="text" th:field="*{genre}" class="form-control" />
+				</div>
+				<div
+					class="mb-3 d-md-flex justify-content-center align-items-center gap-2">
+					<label for="publisher" class="form-label col-md-3 col-sm-12">Editor</label>
+					<input type="text" th:field="*{publisher}" class="form-control" />
+				</div>
+				<div
+					class="mb-3 d-md-flex justify-content-center align-items-center gap-2">
+					<label for="na_sales" class="form-label col-md-3 col-sm-12">Ventas
+						EEUU:</label> <input type="text" th:field="*{na_sales}"
+						class="form-control" />
+				</div>
+				<div
+					class="mb-3 d-md-flex justify-content-center align-items-center gap-2">
+					<label for="eu_sales" class="form-label col-md-3 col-sm-12">Ventas
+						UE</label> <input type="text" th:field="*{eu_sales}" class="form-control" />
+				</div>
+				<div
+					class="mb-3 d-md-flex justify-content-center align-items-center gap-2">
+					<label for="jp_sales" class="form-label col-md-3 col-sm-12">Ventas
+						Japón</label> <input type="text" th:field="*{jp_sales}"
+						class="form-control" />
+				</div>
+				<div
+					class="mb-3 d-md-flex justify-content-center align-items-center gap-2">
+					<label for="other_sales" class="form-label col-md-3 col-sm-12">Otras
+						Ventas</label> <input type="text" th:field="*{other_sales}"
+						class="form-control" />
+				</div>
+				<div
+					class="mb-3 d-md-flex justify-content-center align-items-center gap-2">
+					<label for="global_sales" class="form-label col-md-3 col-sm-12">Ventas
+						Globales</label> <input type="text" th:field="*{global_sales}"
+						class="form-control" />
+				</div>
+				<div
+					class="row d-flex justify-content-center align-items-center gap-2 mt-4">
+					<input type="submit"
+						class="btn btn-primary btn-block col-md-5 col-sm-12"
+						value="Guardar Juego" /> <a href="/"
+						class="btn btn-danger col-md-5 col-sm-12">Cancelar</a>
+
+				</div>
 			</form>
 		</div>
 	</div>
