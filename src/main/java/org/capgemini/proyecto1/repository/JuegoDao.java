@@ -16,5 +16,8 @@ public interface JuegoDao extends JpaRepository<Juego, Integer>{
 	
 	@Query("SELECT DISTINCT j.platform FROM Juego j")
 	public String[] findAllPlatforms();
+
+	@Query("SELECT DISTINCT j.genre FROM Juego j")
+	public String[] findAllGenres();
 	
 }
