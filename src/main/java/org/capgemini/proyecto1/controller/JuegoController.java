@@ -110,5 +110,17 @@ public class JuegoController {
 		m.addAttribute("listadoJuego", juegoService.findByGenre(genre));
 		return "listadoJuego.html";
 	}
+	
+	@GetMapping("/show")
+	public String detalleJuego(@RequestParam("id") int id, Model m) {
+		try {
+			m.addAttribute("juego", juegoService.findById(id));
+			return "detalleJuego";
+		} catch (Exception e) {
+			System.out.print("El juego no existe");
+			return ("redirect:/");
+		}
+		
+	}
 
 }
