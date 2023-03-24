@@ -25,20 +25,25 @@ public interface JuegoService {
 	 * @return
 	 */
 	public Optional<Juego> findById(int id);
-	
-	
+
 	/**
 	 * 
 	 * @param platform
 	 * @return
 	 */
 	public List<Juego> findByPlatform(String platform);
-	
+
 	/**
 	 * 
 	 * @param genre
 	 * @return
 	 */
 	public List<Juego> findByGenre(String genre);
+
+	/**
+	 * 
+	 * @return
+	 */
+	public String[] findAllPlatforms();
 
 }
