@@ -45,5 +45,11 @@ public interface JuegoService {
 	 * @return
 	 */
 	public String[] findAllPlatforms();
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String[] findAllGenres();
 
 }
