@@ -29,6 +29,7 @@
 					<th scope="col">Ventas Globales</th>
 					<th scope="col"></th>
 					<th scope="col"></th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -40,6 +41,8 @@
 					<td th:text="${juego.genre}" />
 					<td th:text="${juego.publisher}" />
 					<td th:text="${juego.global_sales}" />
+					<td><a th:href="@{/show(id=${juego.id})}"
+						class="btn btn-primary">Ver</a></td>
 					<td><a th:href="@{/edit(id=${juego.id})}"
 						class="btn btn-success">Editar</a></td>
 					<td><a th:href="@{/delete(id=${juego.id})}"
