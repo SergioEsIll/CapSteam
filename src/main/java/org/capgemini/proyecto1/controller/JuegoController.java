@@ -98,5 +98,11 @@ public class JuegoController {
 
 		return ("redirect:/");
 	}
+	
+	@GetMapping("/findByPlatform")
+	public String listJuegoFilteredByPlatform(@RequestParam("platform") String platform, Model m) {
+		m.addAttribute("listadoJuego", juegoService.findByPlatform(platform));
+		return "listadoJuego.html";
+	}
 
 }
