@@ -44,6 +44,8 @@ public class CSVHelper {
 					juegosList.add(juego);
 				} catch (NumberFormatException e) {
 					continue;
+				} catch (Exception e) {
+					continue;
 				}
 			}
 			return juegosList;
