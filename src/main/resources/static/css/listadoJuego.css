@@ -1,0 +1,22 @@
+body {
+	background-color: #f2f2f2;
+}
+
+.table {
+	color: #333;
+	font-size: 14px;
+}
+
+.table thead th {
+	background-color: #1b2838;
+	color: #f2f2f2;
+	border-color: #1b2838;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+	background-color: #f2f2f2;
+}
+
+.table-hover tbody tr:hover {
+	background-color: #d9e0e7;
+}
