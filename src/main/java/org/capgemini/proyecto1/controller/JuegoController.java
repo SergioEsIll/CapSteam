@@ -105,4 +105,10 @@ public class JuegoController {
 		return "listadoJuego.html";
 	}
 
+	@GetMapping("/findByGenre")
+	public String listJuegoFilteredByGenre(@RequestParam("genre") String genre, Model m) {
+		m.addAttribute("listadoJuego", juegoService.findByGenre(genre));
+		return "listadoJuego.html";
+	}
+
 }
