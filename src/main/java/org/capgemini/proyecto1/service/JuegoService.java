@@ -33,5 +33,12 @@ public interface JuegoService {
 	 * @return
 	 */
 	public List<Juego> findByPlatform(String platform);
+	
+	/**
+	 * 
+	 * @param genre
+	 * @return
+	 */
+	public List<Juego> findByGenre(String genre);
 
 }
