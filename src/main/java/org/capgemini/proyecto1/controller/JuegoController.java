@@ -57,6 +57,7 @@ public class JuegoController {
 	@GetMapping("/")
 	public String listJuego(Model model) {
 		model.addAttribute("listadoJuego", juegoService.findAll());
+		model.addAttribute("listadoGenero", juegoService.findAllGenres());
 		return "listadoJuego.html";
 	}
 
