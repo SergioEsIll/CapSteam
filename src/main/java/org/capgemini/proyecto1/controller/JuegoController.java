@@ -58,6 +58,7 @@ public class JuegoController {
 	public String listJuego(Model model) {
 		model.addAttribute("listadoJuego", juegoService.findAll());
 		model.addAttribute("listadoGenero", juegoService.findAllGenres());
+		model.addAttribute("listadoPltaforma", juegoService.findAllPlatforms());
 		return "listadoJuego.html";
 	}
 
