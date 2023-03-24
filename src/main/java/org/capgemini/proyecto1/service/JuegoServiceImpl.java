@@ -47,4 +47,9 @@ public class JuegoServiceImpl implements JuegoService {
 		return juegoDao.findByGenre(genre);
 	}
 
+	@Override
+	public String[] findAllPlatforms() {
+		return juegoDao.findAllPlatforms();
+	}
+
 }
