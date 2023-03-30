@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<title>Listado de Juegos</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" href="css/listadoJuego.css" />
+</head>
+
+<body>
+	<div class="container my-5">
+		<h1 class="text-center mb-4">Lista de Juegos - CapSteam</h1>
+		<div class="d-flex justify-content-center m-3 gap-2">
+			<a th:href="@{/new}" class="btn btn-primary">Añadir Juego</a> <a
+				th:href="@{/index}" class="btn btn-secondary">Subir Juegos CSV</a>
+		</div>
+		<div class="mb-2 d-flex justify-content-center align-items-center gap-2">
+			<label for="genres">Seleccione un género:</label> <select
+				class="form-select w-25" name="genres" id="genres" size="1">
+				<option th:each="genero, status : ${listadoGenero}"
+					value="${genero}" th:text="${genero}" />
+			</select>
+		</div>
+		<div class="mb-2 d-flex justify-content-center align-items-center gap-2">
+			<label for="genres">Seleccione una plataforma:</label> <select
+				class="form-select w-25" name="platform" id="platform" size="1">
+				<option th:each="plataforma, status : ${listadoPltaforma}"
+					value="${plataforma}" th:text="${plataforma}" />
+			</select>
+		</div>
+		<table class="table table-striped table-hover">
+			<thead style="background-color: #002d72;">
+				<tr class="text-white">
+					<th scope="col">Rank</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Plataforma</th>
+					<th scope="col">Año</th>
+					<th scope="col">Género</th>
+					<th scope="col">Editor</th>
+					<th scope="col">Ventas Globales</th>
+					<th scope="col"></th>
+					<th scope="col"></th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="juego, status : ${listadoJuego}">
+					<td th:text="${juego.ranking}" />
+					<td th:text="${juego.name}" />
+					<td th:text="${juego.platform}" />
+					<td th:text="${juego.year}" />
+					<td th:text="${juego.genre}" />
+					<td th:text="${juego.publisher}" />
+					<td th:text="${juego.global_sales}" />
+					<td><a th:href="@{/show(id=${juego.id})}"
+						class="btn btn-primary">Ver</a></td>
+					<td><a th:href="@{/edit(id=${juego.id})}"
+						class="btn btn-success">Editar</a></td>
+					<td><a th:href="@{/delete(id=${juego.id})}"
+						class="btn btn-danger">Eliminar</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
